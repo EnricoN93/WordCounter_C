@@ -31,7 +31,7 @@ int contaparole(FILE *file)
 {
 	if(file == NULL)
 	{
-		perror("contalinee function");
+		perror("contaparole function");
 		exit(EXIT_FAILURE);
 	}
 	fseek(file, 0, SEEK_SET);
