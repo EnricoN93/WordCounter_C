@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	{
     	fprintf(stderr, "Expected argument after options\n");
     	exit(EXIT_FAILURE);
-    }
+    	}
 
     while(optind < argc)
     {
