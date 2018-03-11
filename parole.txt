@@ -1,0 +1,10 @@
+esempio di file
+di testo
+contenente
+parole
+scritte su
+più righe
+delle quali ciascuna può contenere una o più
+parole
+che andranno ordinate
+alfabeticamente
