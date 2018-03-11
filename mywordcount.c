@@ -21,7 +21,7 @@ int contalinee(FILE *file)
 	char *buf = (char*) malloc(100* sizeof(char));
 	while(fgets(buf, 1024, file) != NULL)
 	{
-		line_counter++;
+		++line_counter;
 	}
 	free(buf);
 	return line_counter;
