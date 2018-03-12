@@ -21,7 +21,7 @@ int contalinee(FILE *file)
 	char *buf = (char*) malloc(100* sizeof(char));
 	while(fgets(buf, 1024, file) != NULL)
 	{
-		++line_counter;
+		line_counter++;
 	}
 	free(buf);
 	return line_counter;
@@ -31,7 +31,7 @@ int contaparole(FILE *file)
 {
 	if(file == NULL)
 	{
-		perror("contaparole function");
+		perror("contalinee function");
 		exit(EXIT_FAILURE);
 	}
 	fseek(file, 0, SEEK_SET);
@@ -66,16 +66,19 @@ int main(int argc, char *argv[])
 		switch (opt)
 	 	{
         	case 'n': lines = 1;
+        			  continue;
 
         	case 'w' : words = 1 ;
+        			   continue;
 	 	}
 	}
 
 	if (optind >= argc) //nessun file passato come argomento
 	{
+	 	
     	fprintf(stderr, "Expected argument after options\n");
     	exit(EXIT_FAILURE);
-    	}
+    }
 
     while(optind < argc)
     {
@@ -90,12 +93,15 @@ int main(int argc, char *argv[])
     	{
     		int line_counter = contalinee(input);
     		printf("Righe del file %s: %d \n",argv[optind], line_counter);
+    		optind++;
     	}
 
     	if(words == 1)
     	{
+    		if(lines == 1);
     		int word_counter = contaparole(input);
     		printf("Parole presenti nel file %s: %d \n",argv[optind], word_counter);
+    		optind++;
     	}
 
     	if(lines == 0 && words == 0)
@@ -104,9 +110,10 @@ int main(int argc, char *argv[])
     		int word_counter = contaparole(input);
     		printf("Righe del file %s: %d \n",argv[optind], line_counter);
     		printf("Parole presenti nel file %s: %d \n",argv[optind], word_counter);
+    		optind++;
     	}
-    	printf("\n");
-    	optind++;
+    	
+    	
     }
 
 	return 0;
