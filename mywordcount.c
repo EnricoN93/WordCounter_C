@@ -93,7 +93,6 @@ int main(int argc, char *argv[])
     	{
     		int line_counter = contalinee(input);
     		printf("Righe del file %s: %d \n",argv[optind], line_counter);
-    		optind++;
     	}
 
     	if(words == 1)
@@ -101,7 +100,6 @@ int main(int argc, char *argv[])
     		if(lines == 1);
     		int word_counter = contaparole(input);
     		printf("Parole presenti nel file %s: %d \n",argv[optind], word_counter);
-    		optind++;
     	}
 
     	if(lines == 0 && words == 0)
@@ -110,10 +108,9 @@ int main(int argc, char *argv[])
     		int word_counter = contaparole(input);
     		printf("Righe del file %s: %d \n",argv[optind], line_counter);
     		printf("Parole presenti nel file %s: %d \n",argv[optind], word_counter);
-    		optind++;
     	}
     	
-    	
+    	optind++;
     }
 
 	return 0;
