@@ -19,10 +19,12 @@ int contalinee(FILE *file)
 	fseek(file, 0, SEEK_SET);
 	int line_counter = 0;
 	char *buf = (char*) malloc(100* sizeof(char));
+	
 	while(fgets(buf, 1024, file) != NULL)
 	{
 		line_counter++;
 	}
+	
 	free(buf);
 	return line_counter;
 }
@@ -65,20 +67,19 @@ int main(int argc, char *argv[])
 	{
 		switch (opt)
 	 	{
-        	case 'n': lines = 1;
+        		case 'n': lines = 1;
         			  continue;
 
-        	case 'w' : words = 1 ;
-        			   continue;
+        		case 'w' : words = 1 ;
+        			  continue;
 	 	}
 	}
 
 	if (optind >= argc) //nessun file passato come argomento
 	{
-	 	
-    	fprintf(stderr, "Expected argument after options\n");
-    	exit(EXIT_FAILURE);
-    }
+		fprintf(stderr, "Expected argument after options\n");
+    		exit(EXIT_FAILURE);
+    	}
 
     while(optind < argc)
     {
