@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
     		printf("Righe del file %s: %d \n",argv[optind], line_counter);
     		printf("Parole presenti nel file %s: %d \n",argv[optind], word_counter);
     	}
-    	
+    	fclose(input);
     	optind++;
     }
 
